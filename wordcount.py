@@ -8,9 +8,20 @@ def count_words(filename):
 
     word_dict = {}
 
+    punctuations = [".", ",", "?", "_", "&", ":", ";", "!", "--", "*", "[", "]"]
+
     for line in file_data:
         # Tokenize data
         tokenized_list = line.strip().split(" ")
+
+        # Lowercase all the letters
+        tokenized_list = [word.lower() for word in tokenized_list]
+
+        # Replace all punctuation with an empty string
+        for word in tokenized_list:
+            for letter in word:
+                if letter in punctuations:
+                    tokenized_list[tokenized_list.index(word)] = tokenized_list[tokenized_list.index(word)].strip(letter)
 
         # Go over each word in list and add them to the word_dict with count
         for word in tokenized_list:
