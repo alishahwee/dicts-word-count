@@ -17,7 +17,7 @@ def count_words(filename):
         # Lowercase all the letters
         tokenized_list = [word.lower() for word in tokenized_list]
 
-        # Replace all punctuation with an empty string
+        # Strip away all punctuation
         for word in tokenized_list:
             for letter in word:
                 if letter in punctuations:
