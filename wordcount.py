@@ -1,7 +1,10 @@
 from sys import argv
 
 def count_words(filename):
-    """Prints the number of shared words in a text file."""
+    """Prints the number of shared words in a text file.
+    
+    Usage: python3 wordcount.py <textfile.txt>
+    """
 
     # Open the file
     file_data = open(filename)
